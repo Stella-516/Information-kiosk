@@ -15,15 +15,7 @@ export default function FeedbackDone() {
   useEffect(() => {
     document.body.classList.add('feedback-page');
     
-    const existingFeedback = localStorage.getItem('feedback.message');
-    if (existingFeedback && existingFeedback === msg) {
-      const t = setTimeout(() => nav("/"), 20000);
-      return () => {
-        document.body.classList.remove('feedback-page');
-        clearTimeout(t);
-      };
-    }
-    
+    // 매번 새로운 피드백 저장
     const feedbackId = Date.now().toString();
     localStorage.setItem(`feedback_${feedbackId}_message`, msg);
     localStorage.setItem(`feedback_${feedbackId}_emotion`, emoKey || '');
@@ -34,6 +26,7 @@ export default function FeedbackDone() {
       weekday: 'long'
     }));
     
+    // 임시 피드백 데이터 제거
     localStorage.removeItem('feedback.message');
     localStorage.removeItem('feedback.emotion.key');
     localStorage.removeItem('feedback.emotion.label');
@@ -45,7 +38,7 @@ export default function FeedbackDone() {
       document.body.classList.remove('feedback-page');
       clearTimeout(t);
     };
-  }, [nav, msg, emoKey, emoSrc, date]);
+  }, [nav, msg, emoKey, date]);
 
   return (
     <>

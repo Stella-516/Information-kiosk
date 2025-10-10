@@ -6,6 +6,7 @@ export const artworks = [
         artist: "권서준",
         artistAvatar: "/assets/avatars/C(1).jpg",
         image: "/assets/artworks/C1.jpg",
+        qrCode: "/assets/qr/바다속으로 - 권서준.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -21,6 +22,7 @@ export const artworks = [
         title: { ko: "만냥금" },
         artist: "김민정",
         artistAvatar: "/assets/avatars/C(2).jpg",
+        qrCode: "/assets/qr/만냥금 - 김민정.png",
         purchasable: true,
         purchaseNote: "안내데스크로 문의해 주세요.",
         description: {
@@ -61,6 +63,7 @@ export const artworks = [
         title: { ko: "겨울" },
         artist: "박신",
         artistAvatar: "/assets/avatars/C(5).jpg",
+        qrCode: "/assets/qr/겨울 - 박신.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -74,6 +77,7 @@ export const artworks = [
         title: { ko: "행복을 드려요요" },
         artist: "이윤정",
         artistAvatar: "/assets/avatars/C(6).jpg",
+        qrCode: "/assets/qr/행복을드려요 - 이윤정.png",
         purchasable: true,
         purchaseNote: "안내데스크로 문의해 주세요.",
         description: {
@@ -87,6 +91,7 @@ export const artworks = [
         title: { ko: "머그컵" },
         artist: "김가현",
         artistAvatar: "/assets/avatars/D(1).jpg",
+        qrCode: "/assets/qr/머그컵 - 김가현.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -100,6 +105,7 @@ export const artworks = [
         title: { ko: "소중한 내 이름" },
         artist: "김가현",
         artistAvatar: "/assets/avatars/D(1).jpg",
+        qrCode: "/assets/qr/소중한 내 이름 - 김가현.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -113,6 +119,7 @@ export const artworks = [
         title: { ko: "머그컵" },
         artist: "배준서",
         artistAvatar: "/assets/avatars/D(2).jpg",
+        qrCode: "/assets/qr/머그컵 - 배준서.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -126,6 +133,7 @@ export const artworks = [
         title: { ko: "소중한 내 이름" },
         artist: "배준서",
         artistAvatar: "/assets/avatars/D(2).jpg",
+        qrCode: "/assets/qr/소중한 내 이름 - 배준서.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -139,6 +147,7 @@ export const artworks = [
         title: { ko: "머그컵" },
         artist: "왕서연",
         artistAvatar: "/assets/avatars/D(3).jpg",
+        qrCode: "/assets/qr/머그컵 - 왕서연.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -152,6 +161,7 @@ export const artworks = [
         title: { ko: "소중한 내 이름" },
         artist: "왕서연",
         artistAvatar: "/assets/avatars/D(3).jpg",
+        qrCode: "/assets/qr/소중한 내 이름 - 왕서연.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -165,6 +175,7 @@ export const artworks = [
         title: { ko: "머그컵" },
         artist: "정소윤",
         artistAvatar: "/assets/avatars/D(4).jpg",
+        qrCode: "/assets/qr/머그컵 - 정소윤.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -178,6 +189,7 @@ export const artworks = [
         title: { ko: "소중한 내 이름" },
         artist: "정소윤",
         artistAvatar: "/assets/avatars/D(4).jpg",
+        qrCode: "/assets/qr/소중한 내 이름 - 정소윤.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -191,6 +203,7 @@ export const artworks = [
         title: { ko: "머그컵" },
         artist: "최세림",
         artistAvatar: "/assets/avatars/D(5).jpg",
+        qrCode: "/assets/qr/머그컵 - 최세림.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -204,6 +217,7 @@ export const artworks = [
         title: { ko: "소중한 내 이름" },
         artist: "최세림",
         artistAvatar: "/assets/avatars/D(5).jpg",
+        qrCode: "/assets/qr/소중한 내 이름 - 최세림.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -217,6 +231,7 @@ export const artworks = [
         title: { ko: "머그컵" },
         artist: "심찬하",
         artistAvatar: "/assets/avatars/D(6).jpg",
+        qrCode: "/assets/qr/머그컵 - 심찬하.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -230,6 +245,7 @@ export const artworks = [
         title: { ko: "소중한 내 이름" },
         artist: "심찬하",
         artistAvatar: "/assets/avatars/D(6).jpg",
+        qrCode: "/assets/qr/소중한 내 이름 - 심찬하.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -243,6 +259,7 @@ export const artworks = [
         title: { ko: "머그컵" },
         artist: "최서인",
         artistAvatar: "/assets/avatars/D(7).jpg",
+        qrCode: "/assets/qr/머그컵 - 최서인.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -256,6 +273,7 @@ export const artworks = [
         title: { ko: "소중한 내 이름" },
         artist: "최서인",
         artistAvatar: "/assets/avatars/D(7).jpg",
+        qrCode: "/assets/qr/소중한 내 이름 - 최서인.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -269,6 +287,7 @@ export const artworks = [
         title: { ko: "아기자기한 마그넷과 소품" },
         artist: "김가현 외 6인",
         artistAvatar: "/assets/artworks/D8.jpg",
+        qrCode: "/assets/qr/아기자기한 마그넷과 소품 - 김가현 외 6인.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -282,6 +301,7 @@ export const artworks = [
         title: { ko: "낮과 밤" },
         artist: "임재정",
         artistAvatar: "/assets/avatars/A(1).png",
+        qrCode: "/assets/qr/낮과 밤 - 임재정.png",
         purchasable: true,
         purchaseNote: "안내데스크로 문의해 주세요.",
         description: {
@@ -295,6 +315,7 @@ export const artworks = [
         title: { ko: "선, 선, 선!" },
         artist: "설재경",
         artistAvatar: "/assets/avatars/A(2).png",
+        qrCode: "/assets/qr/선, 선, 선! - 설재경.png",
         purchasable: true,
         purchaseNote: "안내데스크로 문의해 주세요.",
         description: {
@@ -308,10 +329,11 @@ export const artworks = [
         title: { ko: "나를 즐겁게 하는 것것" },
         artist: "김우석",
         artistAvatar: "/assets/avatars/A(3).png",
+        qrCode: "/assets/qr/나를 즐겁게 하는 것 - 김우석.png",
         purchasable: true,
         purchaseNote: "안내데스크로 문의해 주세요.",
         description: {
-            ko: "가장 좋아하는 게임인 ‘스타크래프트’의 전투 장면을 물감으로 표현하였습니다. ",
+            ko: "가장 좋아하는 게임인 '스타크래프트'의 전투 장면을 물감으로 표현하였습니다. ",
         },
         image: "/assets/artworks/A3.jpg"
     },
@@ -321,6 +343,7 @@ export const artworks = [
         title: { ko: "센터 오는 길" },
         artist: "김주영",
         artistAvatar: "/assets/avatars/A(4).jpg",
+        qrCode: "/assets/qr/센터 오는 길 - 김주영.png",
         purchasable: true,
         purchaseNote: "안내데스크로 문의해 주세요.",
         description: {
@@ -334,10 +357,11 @@ export const artworks = [
         title: { ko: "무성성" },
         artist: "이무호",
         artistAvatar: "/assets/avatars/A(5).jpg",
+        qrCode: "/assets/qr/무성 - 이문호.png",
         purchasable: true,
         purchaseNote: "안내데스크로 문의해 주세요.",
         description: {
-            ko: "가족에 대한 애정을 담아 동생 ‘무성’이와 나의 가족을 표현한 드로잉 작품입니다. ",
+            ko: "가족에 대한 애정을 담아 동생 '무성'이와 나의 가족을 표현한 드로잉 작품입니다. ",
         },
         image: "/assets/artworks/A5.jpg"
     },
@@ -347,6 +371,7 @@ export const artworks = [
         title: { ko: "번개맨" },
         artist: "이지민",
         artistAvatar: "/assets/avatars/A(6).png",
+        qrCode: "/assets/qr/번개맨 - 이지민.png",
         purchasable: true,
         purchaseNote: "안내데스크로 문의해 주세요.",
         description: {
@@ -360,6 +385,7 @@ export const artworks = [
         title: { ko: "자화상" },
         artist: "수락마을 작가들",
         artistAvatar: "/assets/artworks/A7.jpg",
+        qrCode: "/assets/qr/자화상 - 수락마을 작가들(강태훈, 김재혁, 윤상현, 윤요한, 인치언, 정재형).png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -373,6 +399,7 @@ export const artworks = [
         title: { ko: "맛있는 색" },
         artist: "정인서 외 24인",
         artistAvatar: "/assets/artworks/A8.jpg",
+        qrCode: "/assets/qr/맛있는 색 - 정인서 외 24명.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -386,6 +413,7 @@ export const artworks = [
         title: { ko: "스마일 컬렉션" },
         artist: "김하영 외 21인",
         artistAvatar: "/assets/artworks/A9.jpg",
+        qrCode: "/assets/qr/스마일 컬렉션 - 김하영 외 21명.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -399,6 +427,7 @@ export const artworks = [
         title: { ko: "연 하늘을보다" },
         artist: "유영일",
         artistAvatar: "/assets/avatars/E(1).jpg",
+        qrCode: "/assets/qr/연 하늘을 보다 - 유영일.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -412,6 +441,7 @@ export const artworks = [
         title: { ko: "기다림" },
         artist: "송윤경",
         artistAvatar: "/assets/avatars/E(2).jpg",
+        qrCode: "/assets/qr/기다림 - 송윤경.png",
         purchasable: true,
         purchaseNote: "구매하실 분은 안내데스크로 문의해 주세요.",
         description: {
@@ -425,6 +455,7 @@ export const artworks = [
         title: { ko: "어디로 갈까..." },
         artist: "최원우",
         artistAvatar: "/assets/avatars/E(3).jpg",
+        qrCode: "/assets/qr/어디로 갈까... - 최원우.png",
         purchasable: true,
         purchaseNote: "구매하실 분은 안내데스크로 문의해 주세요.",
         description: {
@@ -438,6 +469,7 @@ export const artworks = [
         title: { ko: "집으로 돌아가는 길" },
         artist: "이주연",
         artistAvatar: "/assets/avatars/E(4).jpg",
+        qrCode: "/assets/qr/집으로 돌아가는 길 - 이주연.png",
         purchasable: true,
         purchaseNote: "구매하실 분은 안내데스크로 문의해 주세요.",
         description: {
@@ -451,6 +483,7 @@ export const artworks = [
         title: { ko: "붉은유혹" },
         artist: "이애경",
         artistAvatar: "/assets/avatars/E(5).jpg",
+        qrCode: "/assets/qr/붉은유혹 - 이애경.png",
         purchasable: true,
         purchaseNote: "구매하실 분은 안내데스크로 문의해 주세요.",
         description: {
@@ -464,6 +497,7 @@ export const artworks = [
         title: { ko: "나비와 해바라기 네송이" },
         artist: "이경윤",
         artistAvatar: "/assets/avatars/E(6).jpg",
+        qrCode: "/assets/qr/나비와 해바라기 네 송이 - 이경윤.png",
         purchasable: true,
         purchaseNote: "구매하실 분은 안내데스크로 문의해 주세요.",
         description: {
@@ -477,6 +511,7 @@ export const artworks = [
         title: { ko: "함께 오름" },
         artist: "김선기",
         artistAvatar: "/assets/avatars/E(7).png",
+        qrCode: "/assets/qr/함께 오름 - 김선기.png",
         purchasable: true,
         purchaseNote: "구매하실 분은 안내데스크로 문의해 주세요.",
         description: {
@@ -490,6 +525,7 @@ export const artworks = [
         title: { ko: "피렌체 여행에서" },
         artist: "이순화",
         artistAvatar: "/assets/avatars/E(8).png",
+        qrCode: "/assets/qr/피렌체 여행에서 - 이순화.png",
         purchasable: true,
         purchaseNote: "구매하실 분은 안내데스크로 문의해 주세요.",
         description: {
@@ -503,6 +539,7 @@ export const artworks = [
         title: { ko: "구름 아래 작은 정원" },
         artist: "송광근",
         artistAvatar: "/assets/avatars/E(9).jpg",
+        qrCode: "/assets/qr/구름 아래 작은 정원 - 송광근.png",
         purchasable: true,
         purchaseNote: "구매하실 분은 안내데스크로 문의해 주세요.",
         description: {
@@ -516,6 +553,7 @@ export const artworks = [
         title: { ko: "용문의 가을" },
         artist: "정미현",
         artistAvatar: "/assets/avatars/E(10).jpg",
+        qrCode: "/assets/qr/용문의 가을 - 정미현.png",
         purchasable: true,
         purchaseNote: "구매하실 분은 안내데스크로 문의해 주세요.",
         description: {
@@ -529,6 +567,7 @@ export const artworks = [
         title: { ko: "마이산" },
         artist: "김희진",
         artistAvatar: "/assets/avatars/E(11).jpg",
+        qrCode: "/assets/qr/마이산 - 김희진.png",
         purchasable: true,
         purchaseNote: "구매하실 분은 안내데스크로 문의해 주세요.",
         description: {
@@ -541,6 +580,7 @@ export const artworks = [
         title: { ko: "보랏빛 향연" },
         artist: "송계향",
         artistAvatar: "/assets/avatars/E(12).jpg",
+        qrCode: "/assets/qr/보랏빛 향연 - 송계향.png",
         purchasable: true,
         purchaseNote: "구매하실 분은안내데스크로 문의해 주세요.",
         description: {
@@ -551,8 +591,9 @@ export const artworks = [
         id: "E13",
         org: "서울시립북부장애인종합복지관",
         title: { ko: "깊어가는 가을" },
-        artist: "선경애",
+        artist: "신경애",
         artistAvatar: "/assets/avatars/E(13).jpg",
+        qrCode: "/assets/qr/깊어가는 가을 - 신경애.png",
         purchasable: true,
         purchaseNote: "구매하실 분은안내데스크로 문의해 주세요.",
         description: {
@@ -566,6 +607,7 @@ export const artworks = [
         title: { ko: "케이크와 음료수" },
         artist: "김근아",
         artistAvatar: "/assets/avatars/B(1).jpg",
+        qrCode: "/assets/qr/케이크와음료수 - 김근아.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -579,6 +621,7 @@ export const artworks = [
         title: { ko: "호텔 로비" },
         artist: "김성민",
         artistAvatar: "/assets/avatars/B(2).jpg",
+        qrCode: "/assets/qr/호텔로비 - 김성민.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -592,6 +635,7 @@ export const artworks = [
         title: { ko: "우리 가족" },
         artist: "김승주",
         artistAvatar: "/assets/avatars/B(3).jpg",
+        qrCode: "/assets/qr/우리가족 - 김승주.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -605,6 +649,7 @@ export const artworks = [
         title: { ko: "바다와 배" },
         artist: "남재경",
         artistAvatar: "/assets/avatars/B(4).jpg",
+        qrCode: "/assets/qr/바다와 배 - 남재영.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -618,6 +663,7 @@ export const artworks = [
         title: { ko: "산과 풍경" },
         artist: "이승민",
         artistAvatar: "/assets/avatars/B(5).jpg",
+        qrCode: "/assets/qr/산과 풍경 - 이승민.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -631,6 +677,7 @@ export const artworks = [
         title: { ko: "우주선 자동차" },
         artist: "이주석",
         artistAvatar: "/assets/avatars/B(6).jpg",
+        qrCode: "/assets/qr/우주선 자동차 - 이주석.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -644,6 +691,7 @@ export const artworks = [
         title: { ko: "행복을 나누는 수영장" },
         artist: "전규연",
         artistAvatar: "/assets/avatars/B(7).jpg",
+        qrCode: "/assets/qr/행복을나누는수영장 - 전규연.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -657,6 +705,7 @@ export const artworks = [
         title: { ko: "카페, 와인, 다운복지관" },
         artist: "전서연",
         artistAvatar: "/assets/avatars/B(8).jpg",
+        qrCode: "/assets/qr/카페,와인,다운복지관 - 전서연.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -670,6 +719,7 @@ export const artworks = [
         title: { ko: "나무와 집" },
         artist: "최재훈",
         artistAvatar: "/assets/avatars/B(9).jpg",
+        qrCode: "/assets/qr/나무와 집 - 최재훈.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -681,8 +731,9 @@ export const artworks = [
         id: "B10",
         org: "다운복지관",
         title: { ko: "평화의 하트 바오밥나무" },
-        artist: "이승민",
+        artist: "이종석",
         artistAvatar: "/assets/avatars/B(10).jpg",
+        qrCode: "/assets/qr/평화의하트바오밥나무 - 이종석.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -696,6 +747,7 @@ export const artworks = [
         title: { ko: "8개의 시선, 하나의 풍경" },
         artist: "평생대학 자립컨텐츠학과",
         artistAvatar: "/assets/avatars/B(11).jpg",
+        qrCode: "/assets/qr/8개의시선,하나의풍경 - 평생대학자립컨텐츠학과.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -709,6 +761,7 @@ export const artworks = [
         title: { ko: "8개의 시선, 하나의 풍경" },
         artist: "평생대학 자립컨텐츠학과",
         artistAvatar: "/assets/avatars/B(11).jpg",
+        qrCode: "/assets/qr/8개의시선,하나의풍경 - 평생대학자립컨텐츠학과.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -722,6 +775,7 @@ export const artworks = [
         title: { ko: "지호락" },
         artist: "도정윤",
         artistAvatar: "/assets/avatars/F(1).jpg",
+        qrCode: "/assets/qr/지호락 - 도정윤.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -735,6 +789,7 @@ export const artworks = [
         title: { ko: "벗" },
         artist: "박상종",
         artistAvatar: "/assets/avatars/F(2).jpg",
+        qrCode: "/assets/qr/벗 - 박상종.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -748,6 +803,7 @@ export const artworks = [
         title: { ko: "수처락" },
         artist: "조규봉",
         artistAvatar: "/assets/avatars/F(3).jpg",
+        qrCode: "/assets/qr/수처락 - 조규봉.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -761,6 +817,7 @@ export const artworks = [
         title: { ko: "적격" },
         artist: "권영국",
         artistAvatar: "/assets/avatars/F(4).jpg",
+        qrCode: "/assets/qr/적격 - 권영국.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -774,6 +831,7 @@ export const artworks = [
         title: { ko: "정락" },
         artist: "조남형",
         artistAvatar: "/assets/avatars/F(5).jpg",
+        qrCode: "/assets/qr/정락 - 조남형.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -787,6 +845,7 @@ export const artworks = [
         title: { ko: "명명덕" },
         artist: "김원식",
         artistAvatar: "/assets/avatars/F(6).jpg",
+        qrCode: "/assets/qr/명명덕 - 김원식.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -800,6 +859,7 @@ export const artworks = [
         title: { ko: "연꽃" },
         artist: "윤석린",
         artistAvatar: "/assets/avatars/F(7).png",
+        qrCode: "/assets/qr/연꽃 - 윤석린.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -813,6 +873,7 @@ export const artworks = [
         title: { ko: "노래하는 새" },
         artist: "김종남",
         artistAvatar: "/assets/avatars/F(8).png",
+        qrCode: "/assets/qr/노래하는 새 - 김종남.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -826,6 +887,7 @@ export const artworks = [
         title: { ko: "꽃과 사랑" },
         artist: "김후식",
         artistAvatar: "/assets/avatars/F(9).jpg",
+        qrCode: "/assets/qr/꽃과 사랑 - 김후식.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -839,6 +901,7 @@ export const artworks = [
         title: { ko: "개화" },
         artist: "문기웅",
         artistAvatar: "/assets/avatars/F(10).jpg",
+        qrCode: "/assets/qr/개화 - 문기웅.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -852,6 +915,7 @@ export const artworks = [
         title: { ko: "향(香)" },
         artist: "박호기",
         artistAvatar: "/assets/avatars/F(11).png",
+        qrCode: "/assets/qr/향(香) - 박호기.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
@@ -865,6 +929,7 @@ export const artworks = [
         title: { ko: "꽃, 물, 해" },
         artist: "김현민",
         artistAvatar: "/assets/avatars/F(12).jpg",
+        qrCode: "/assets/qr/꽃, 물, 해 - 김현민.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {

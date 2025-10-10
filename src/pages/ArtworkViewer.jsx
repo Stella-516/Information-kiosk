@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { artworks as artworksData } from "../data/artworksData";
 
@@ -7,16 +7,51 @@ const PLACEHOLDER_IMG = "/assets/artworks/placeholder.png";
 
 export default function ArtworkViewer({ items }) {
   const nav = useNavigate();
-  const [sp] = useSearchParams();
+  const [sp, setSp] = useSearchParams();
 
-  const idx = Number(sp.get("i") ?? -1);
+  const initialIdx = Number(sp.get("i") ?? -1);
+  const [idx, setIdx] = useState(initialIdx);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
   const data = useMemo(() => {
     const src = items && items.length ? items : artworksData || [];
     return Array.isArray(src) ? src : [];
   }, [items]);
 
+  useEffect(() => {
+    setIdx(initialIdx);
+  }, [initialIdx]);
+
   const art = data[idx] || null;
+
+  const handleTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe && idx < data.length - 1) {
+      const newIdx = idx + 1;
+      setIdx(newIdx);
+      setSp({ i: newIdx.toString() });
+    }
+    if (isRightSwipe && idx > 0) {
+      const newIdx = idx - 1;
+      setIdx(newIdx);
+      setSp({ i: newIdx.toString() });
+    }
+  };
 
   const otherWorks = useMemo(() => {
     if (!art) return [];
@@ -85,6 +120,9 @@ export default function ArtworkViewer({ items }) {
         height: "100vh",
         overflow: "hidden",
       }}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       <section
         style={{
@@ -96,8 +134,83 @@ export default function ArtworkViewer({ items }) {
           flexDirection: "column",
           justifyContent: "flex-start",
           paddingTop: "60px",
+          position: "relative",
         }}
       >
+        {/* 네비게이션 인디케이터 */}
+        <div style={{
+          position: "absolute",
+          top: "20px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          display: "flex",
+          gap: "8px",
+          alignItems: "center",
+          zIndex: 10,
+        }}>
+          <button
+            onClick={() => {
+              if (idx > 0) {
+                const newIdx = idx - 1;
+                setIdx(newIdx);
+                setSp({ i: newIdx.toString() });
+              }
+            }}
+            disabled={idx === 0}
+            style={{
+              background: "#111",
+              color: "#fff",
+              border: "none",
+              borderRadius: "50%",
+              width: "32px",
+              height: "32px",
+              cursor: idx === 0 ? "not-allowed" : "pointer",
+              opacity: idx === 0 ? 0.3 : 1,
+              fontSize: "18px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            ‹
+          </button>
+          <span style={{
+            background: "#111",
+            color: "#fff",
+            padding: "6px 16px",
+            borderRadius: "20px",
+            fontSize: "14px",
+            fontWeight: "bold",
+          }}>
+            {idx + 1} / {data.length}
+          </span>
+          <button
+            onClick={() => {
+              if (idx < data.length - 1) {
+                const newIdx = idx + 1;
+                setIdx(newIdx);
+                setSp({ i: newIdx.toString() });
+              }
+            }}
+            disabled={idx === data.length - 1}
+            style={{
+              background: "#111",
+              color: "#fff",
+              border: "none",
+              borderRadius: "50%",
+              width: "32px",
+              height: "32px",
+              cursor: idx === data.length - 1 ? "not-allowed" : "pointer",
+              opacity: idx === data.length - 1 ? 0.3 : 1,
+              fontSize: "18px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            ›
+          </button>
+        </div>
         <div
           style={{
             display: "grid",
@@ -138,6 +251,32 @@ export default function ArtworkViewer({ items }) {
                 onError={(e) => swapTo(e, PLACEHOLDER_IMG)}
               />
             </div>
+
+            {art.qrCode && (
+              <div style={{ marginBottom: "12px", textAlign: "center" }}>
+                <div
+                  style={{
+                    fontSize: "12px",
+                    fontWeight: "bold",
+                    color: "#666",
+                    marginBottom: "6px",
+                  }}
+                >
+                  작품 정보 QR
+                </div>
+                <img
+                  src={art.qrCode}
+                  alt="작품 QR 코드"
+                  style={{
+                    width: "120px",
+                    height: "120px",
+                    objectFit: "contain",
+                    margin: "0 auto",
+                    display: "block",
+                  }}
+                />
+              </div>
+            )}
 
             {otherWorks.length > 0 && (
               <div style={{ marginTop: "auto" }}>

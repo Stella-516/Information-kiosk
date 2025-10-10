@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import frame1 from "../assets/frame1.svg";
+import poster from "../assets/poster.png";
 
 function Landing() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ function Landing() {
       onClick={handleClick}
     >
       <img
-        src={frame1}
+        src={poster}
         alt="나눔과 소통의 미학전"
         style={{
           position: "absolute",

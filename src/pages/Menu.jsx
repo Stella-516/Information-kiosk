@@ -89,12 +89,12 @@ export default function Menu() {
                   src={it.image}
                   alt={it.title}
                   style={{
-                    width: it.title === "전체 작품 설명 QR" ? "140px" : "160px",
+                    width: it.title === "전체 작품 설명 QR" ? "120px" : "140px",
                     height:
-                      it.title === "전체 작품 설명 QR" ? "140px" : "160px",
+                      it.title === "전체 작품 설명 QR" ? "120px" : "140px",
                     objectFit: "contain",
                     marginBottom:
-                      it.title === "전체 작품 설명 QR" ? "32px" : "24px",
+                      it.title === "전체 작품 설명 QR" ? "24px" : "20px",
                   }}
                 />
                 <h3 className="menu-card__title">{it.title}</h3>

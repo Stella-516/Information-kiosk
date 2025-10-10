@@ -15,17 +15,7 @@ export default function HighContrastFeedbackDone() {
   useEffect(() => {
     document.body.classList.add("feedback-page");
 
-    // 이미 저장된 피드백이 있는지 확인
-    const existingFeedback = localStorage.getItem("feedback.message");
-    if (existingFeedback && existingFeedback === msg) {
-      const t = setTimeout(() => nav("/high-contrast"), 20000);
-      return () => {
-        document.body.classList.remove("feedback-page");
-        clearTimeout(t);
-      };
-    }
-
-    // 피드백을 고유한 ID와 함께 저장
+    // 매번 새로운 피드백 저장
     const feedbackId = Date.now().toString();
     localStorage.setItem(`feedback_${feedbackId}_message`, msg);
     localStorage.setItem(`feedback_${feedbackId}_emotion`, emoKey || "");
@@ -40,7 +30,7 @@ export default function HighContrastFeedbackDone() {
         })
     );
 
-    // 기존 피드백 데이터 정리 (중복 방지)
+    // 임시 피드백 데이터 제거
     localStorage.removeItem("feedback.message");
     localStorage.removeItem("feedback.emotion.key");
     localStorage.removeItem("feedback.emotion.label");
@@ -52,7 +42,7 @@ export default function HighContrastFeedbackDone() {
       document.body.classList.remove("feedback-page");
       clearTimeout(t);
     };
-  }, [nav, msg, emoKey, emoSrc, date]);
+  }, [nav, msg, emoKey, date]);
 
   return (
     <>

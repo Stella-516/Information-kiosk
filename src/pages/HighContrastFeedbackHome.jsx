@@ -24,7 +24,6 @@ export default function HighContrastFeedbackHome() {
   const loadFeedbackData = () => {
     // localStorage에서 피드백 데이터 가져오기
     const savedFeedbacks = [];
-    const seenMessages = new Set(); // 중복 메시지 방지
 
     console.log("Loading feedback data...");
     console.log("localStorage keys:", Object.keys(localStorage));
@@ -39,8 +38,7 @@ export default function HighContrastFeedbackHome() {
 
         console.log("Found feedback:", { feedbackId, message, emotion, date });
 
-        if (message && emotion && date && !seenMessages.has(message)) {
-          seenMessages.add(message);
+        if (message && emotion && date) {
           savedFeedbacks.push({
             id: feedbackId,
             message: message,
@@ -51,25 +49,15 @@ export default function HighContrastFeedbackHome() {
       }
     }
 
-    // 현재 진행 중인 피드백도 확인 (feedback.으로 시작하는 키들)
-    const currentMessage = localStorage.getItem('feedback.message');
-    const currentEmotion = localStorage.getItem('feedback.emotion.key');
-    const currentDate = localStorage.getItem('feedback.date');
-    
-    if (currentMessage && currentEmotion && currentDate && !seenMessages.has(currentMessage)) {
-      console.log('Found current feedback:', { currentMessage, currentEmotion, currentDate });
-      seenMessages.add(currentMessage);
-      savedFeedbacks.push({
-        id: 'current',
-        message: currentMessage,
-        emotion: currentEmotion,
-        date: currentDate
-      });
-    }
-
     console.log("Total saved feedbacks:", savedFeedbacks.length);
 
-    savedFeedbacks.sort((a, b) => new Date(b.date) - new Date(a.date));
+    // 최신 순으로 정렬하고 최대 8개만 표시
+    savedFeedbacks.sort((a, b) => {
+      const timeA = parseInt(a.id) || 0;
+      const timeB = parseInt(b.id) || 0;
+      return timeB - timeA;
+    });
+    
     setFeedbackData(savedFeedbacks.slice(0, 8));
     setTotalCount(savedFeedbacks.length);
   };
@@ -140,7 +128,6 @@ export default function HighContrastFeedbackHome() {
       }}
     >
       <h1 className="fbh-title">미술전 소감 작성하기</h1>
-      <p className="fbh-sub">총 {totalCount}명이 작성해주셨어요.</p>
       <div
         className="fbh-cards"
         aria-label="최근 소감 예시"
@@ -152,15 +139,16 @@ export default function HighContrastFeedbackHome() {
           overflow: "hidden",
           position: "relative",
           width: "100%",
-          height: "250px",
+          height: "280px",
         }}
       >
         <div
           style={{
             display: "flex",
-            transform: `translateX(-${currentIndex * 35}%)`,
+            gap: "30px",
+            transform: `translateX(-${currentIndex * 320}px)`,
             transition: "transform 0.3s ease-in-out",
-            width: `${displayData.length * 35}%`,
+            padding: "0 20px"
           }}
         >
           {displayData.map((item, index) => (
@@ -168,9 +156,13 @@ export default function HighContrastFeedbackHome() {
               key={item.id || index}
               className="fbh-card"
               style={{
-                width: `${35 / displayData.length}%`,
+                minWidth: "280px",
+                width: "280px",
                 flexShrink: 0,
-                padding: "0 60px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "10px"
               }}
             >
               <div className="fbh-card__thumb">
@@ -186,16 +178,16 @@ export default function HighContrastFeedbackHome() {
                   />
                 )}
               </div>
-              <div className="fbh-card__body">
+              <div className="fbh-card__body" style={{ textAlign: "center", width: "100%" }}>
                 <h3
                   className="fbh-card__title"
-                  style={{ fontSize: "14px", lineHeight: "1.3" }}
+                  style={{ fontSize: "16px", lineHeight: "1.4", marginBottom: "8px" }}
                 >
                   {item.message}
                 </h3>
                 <p
                   className="fbh-card__date"
-                  style={{ fontSize: "11px", whiteSpace: "nowrap" }}
+                  style={{ fontSize: "12px", whiteSpace: "nowrap" }}
                 >
                   {item.date}
                 </p>
