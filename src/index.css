@@ -840,8 +840,9 @@ body.feedback-page .museum-bg__overlay {
 .fbe-actions {
   margin-top: 18px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 15px;
 }
 .fbe-nav {
   height: 48px;
@@ -1130,7 +1131,7 @@ body.feedback-page .museum-bg__overlay {
   width: 94vw; /* 화면 폭의 대부분 사용 */
   margin: 0 auto; /* 가운데 정렬 */
   margin-bottom: 0px; /* 하단바와 네모박스 사이 공간을 채우기 위해 여백 제거 */
-  min-height: 220px; /* 요소들만 보이도록 세로 길이 대폭 축소 */
+  min-height: 200px; /* 요소들만 보이도록 세로 길이 대폭 축소 */
   background: #fff;
   color: #111;
   border-radius: 18px 18px 0 0;
@@ -1152,28 +1153,28 @@ body.feedback-page .museum-bg__overlay {
 
 /* 메시지 선택 카드 4개 - emotion 페이지와 동일한 스타일 */
 .fbm-options {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(160px, 1fr));
-  gap: 8px;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+  align-items: center;
 }
 .fbm-option {
-  width: 180px;
-  height: 140px;
+  width: auto;
+  height: auto;
   background: transparent;
-  border-radius: 16px;
+  border-radius: 0;
   border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
   box-shadow: none;
   cursor: pointer;
-  transition: transform 0.12s ease;
+  transition: color 0.12s ease;
   font-weight: 900;
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
-  padding: 8px;
-  min-height: 140px;
+  padding: 12px 15px;
+  min-height: auto;
+  color: #333;
+  white-space: nowrap;
 }
 .fbm-option-text {
   display: flex;
@@ -1190,10 +1191,13 @@ body.feedback-page .museum-bg__overlay {
   overflow: visible;
 }
 .fbm-option:hover {
-  transform: translateY(-2px);
+  color: #b095ff;
 }
 .fbm-option.active {
-  transform: scale(1.05);
+  color: #b095ff;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
 }
 
 @media (max-width: 1100px) {
@@ -1208,8 +1212,9 @@ body.feedback-page .museum-bg__overlay {
   position: sticky;
   bottom: calc(72px + 16px); /* Footer(72px) 위에 16px 여백 */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 15px;
 }
 .fbm-flower {
   position: absolute;
@@ -1591,18 +1596,21 @@ body.feedback-page .museum-bg__overlay {
 /* horizontal rail & card */
 .art-rail {
   display: flex;
+  flex-wrap: nowrap;
   gap: 16px;
   padding: 8px 4px;
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: thin;
-  scrollbar-color: #ccc #f5f5f5;
+  scrollbar-color: #888 #e0e0e0;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
+  width: 100%;
 }
 .card {
   min-width: 320px;
+  flex-shrink: 0;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 10px 30px rgba(18, 23, 61, 0.08);
@@ -1775,16 +1783,19 @@ body.feedback-page .museum-bg__overlay {
   overflow-x: auto;
   overflow-y: hidden;
   display: flex;
+  flex-wrap: nowrap;
   gap: 16px;
   padding: 8px 4px;
   scrollbar-width: thin;
-  scrollbar-color: #ccc #f5f5f5;
+  scrollbar-color: #888 #e0e0e0;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
+  width: 100%;
 }
 .card {
   min-width: 320px;
+  flex-shrink: 0;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 10px 30px rgba(18, 23, 61, 0.08);
@@ -1861,21 +1872,23 @@ body.feedback-page .museum-bg__overlay {
 
 /* 웹킷 브라우저용 스크롤바 스타일 */
 .art-rail::-webkit-scrollbar {
-  height: 8px;
+  height: 12px;
 }
 
 .art-rail::-webkit-scrollbar-track {
-  background: #f5f5f5;
-  border-radius: 4px;
+  background: #e0e0e0;
+  border-radius: 6px;
+  margin: 0 8px;
 }
 
 .art-rail::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
+  background: #888;
+  border-radius: 6px;
+  border: 2px solid #e0e0e0;
 }
 
 .art-rail::-webkit-scrollbar-thumb:hover {
-  background: #999;
+  background: #555;
 }
 /* 패널(사이드바 + 카드 레일) 공통 박스 */
 .panel {
@@ -1941,26 +1954,32 @@ body.feedback-page .museum-bg__overlay {
   display: flex;
   flex-direction: column;
   gap: 14px; /* 제목/레일 간격 */
+  overflow: hidden;
+  width: 100%;
+  min-width: 0;
 }
 
 /* 가로 레일 그대로 유지 */
 .art-rail {
   display: flex;
+  flex-wrap: nowrap;
   gap: 16px;
   padding: 8px 4px;
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: thin;
-  scrollbar-color: #ccc #f5f5f5;
+  scrollbar-color: #888 #e0e0e0;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   background: inherit;
+  width: 100%;
 }
 
 /* 카드 폭 조금 키워주고 통일 */
 .card {
   min-width: 340px;
+  flex-shrink: 0;
 } /* ← 320 → 340 */
 .card .thumb {
   aspect-ratio: 4/3;

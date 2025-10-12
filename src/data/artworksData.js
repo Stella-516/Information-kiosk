@@ -74,7 +74,7 @@ export const artworks = [
     {
         id: "C6",
         org: "서울시립뇌성마비복지관",
-        title: { ko: "행복을 드려요요" },
+        title: { ko: "행복을 드려요" },
         artist: "이윤정",
         artistAvatar: "/assets/avatars/C(6).jpg",
         qrCode: "/assets/qr/행복을드려요 - 이윤정.png",
@@ -326,7 +326,7 @@ export const artworks = [
     {
         id: "A3",
         org: "노원발달장애인평생교육센터",
-        title: { ko: "나를 즐겁게 하는 것것" },
+        title: { ko: "나를 즐겁게 하는 것" },
         artist: "김우석",
         artistAvatar: "/assets/avatars/A(3).png",
         qrCode: "/assets/qr/나를 즐겁게 하는 것 - 김우석.png",
@@ -354,7 +354,7 @@ export const artworks = [
     {
         id: "A5",
         org: "노원발달장애인평생교육센터",
-        title: { ko: "무성성" },
+        title: { ko: "무성" },
         artist: "이무호",
         artistAvatar: "/assets/avatars/A(5).jpg",
         qrCode: "/assets/qr/무성 - 이문호.png",
@@ -842,7 +842,7 @@ export const artworks = [
     {
         id: "F6",
         org: "서울시립상이군경복지관",
-        title: { ko: "명명덕" },
+        title: { ko: "명덕" },
         artist: "김원식",
         artistAvatar: "/assets/avatars/F(6).jpg",
         qrCode: "/assets/qr/명명덕 - 김원식.png",
@@ -942,12 +942,12 @@ export const artworks = [
         org: "서울시립북부장애인종합복지관",
         title: { ko: "그 겨울에는" },
         artist: "김선기",
-        artistAvatar: "/assets/avatars/H(14).jpg",
+        artistAvatar: "/assets/avatars/E(14).jpg",
         purchasable: true,
         purchaseNote: "구매하실 분은 안내데스크로 문의해 주세요.",
         description: {
             ko: "눈 덮인 나무와 흐르는 시냇물은 얼어붙은 계절에서도 이어지는 생명을 말하며 차가움 속의 빛과 물결은 새로운 계절의 향한 희망을 표현했습니다.",
         },
-        image: "/assets/artworks/H14.jpg"
+        image: "/assets/artworks/E14.jpg"
     }
 ];

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import point from "../assets/point.png";
 
 export default function MenuInfo() {
   const nav = useNavigate();
@@ -78,16 +79,30 @@ export default function MenuInfo() {
               fontWeight: 900,
               display: "flex",
               alignItems: "center",
-              justifyContent: "center",
+              justifyContent: "space-between",
               gap: 15,
               cursor: "pointer",
               minWidth: "450px",
               height: "100%",
+              position: "relative",
             }}
           >
-            <span style={{ color: "#ff4d4f", fontSize: 32 }}>♀</span>
-            <span style={{ color: "#2f6bff", fontSize: 32 }}>♂</span>
-            장애인 화장실
+            <div style={{ display: "flex", alignItems: "center", gap: 15, flex: 1, justifyContent: "center" }}>
+              <span style={{ color: "#ff4d4f", fontSize: 32 }}>♀</span>
+              <span style={{ color: "#2f6bff", fontSize: 32 }}>♂</span>
+              장애인 화장실
+            </div>
+            
+            <img
+              src={point}
+              alt="클릭 안내"
+              style={{
+                width: "50px",
+                height: "50px",
+                objectFit: "contain",
+                marginRight: "10px",
+              }}
+            />
           </button>
         </div>
       </div>

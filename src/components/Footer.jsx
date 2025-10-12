@@ -19,12 +19,13 @@ export default function Footer() {
         backgroundColor: isHighContrastMode ? "#000" : "#1a1a1a",
         color: isHighContrastMode ? "#fff" : "#fff",
         display: "flex",
-        justifyContent: "space-between",
+        justifyContent: "center",
         alignItems: "center",
         padding: "0 20px",
         boxSizing: "border-box",
         zIndex: 1000,
         borderTop: isHighContrastMode ? "3px solid #fff" : "none",
+        gap: "20px",
       }}
     >
       <div style={{ display: "flex", gap: "10px" }}>
@@ -71,6 +72,7 @@ export default function Footer() {
           낮은화면대비
         </button>
       </div>
+      
       <div style={{ display: "flex", gap: "10px" }}>
         <button
           onClick={() => nav("/")}

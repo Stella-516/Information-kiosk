@@ -24,16 +24,16 @@ export default function LowScreenMenu() {
       image: exhibit,
     },
     {
-      title: "작가분들 모아보기",
-      desc: "작가별 사진 보기.",
-      to: "/low-screen/artist-intro",
-      image: writer,
-    },
-    {
       title: "작품 설명 보기",
       desc: "작품별 상세 설명과 이미지.",
       to: "/low-screen/works",
       image: picture,
+    },
+    {
+      title: "작가분들 모아보기",
+      desc: "작가별 사진 보기.",
+      to: "/low-screen/artist-intro",
+      image: writer,
     },
     {
       title: "전시회 소감 작성",
