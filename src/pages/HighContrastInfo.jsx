@@ -16,27 +16,6 @@ export default function HighContrastInfo() {
     };
   }, []);
 
-  const exhibitionZones = [
-    {
-      id: "north",
-      name: "서울시립북부장애인종합복지관 지관 전시존",
-      color: "#FFB6C1",
-    },
-    { id: "dawoon", name: "다운복지관 전시존", color: "#FFD700" },
-    { id: "veterans", name: "서울시립상이군경복지관 전시존", color: "#FF6B6B" },
-    {
-      id: "nowon",
-      name: "노원발달장애인평생교육센터 전시존",
-      color: "#90EE90",
-    },
-    { id: "cerebral", name: "서울시립뇌성마비복지관 전시존", color: "#87CEEB" },
-    {
-      id: "parents",
-      name: "서울장애인부모연대 노원지대 전시존",
-      color: "#4169E1",
-    },
-  ];
-
   return (
     <div
       style={{
@@ -49,7 +28,6 @@ export default function HighContrastInfo() {
         overflow: "hidden",
       }}
     >
-      {/*  */}
       <div
         style={{
           width: "min(1600px, 99vw)",
@@ -57,156 +35,73 @@ export default function HighContrastInfo() {
           margin: "0 auto",
           display: "flex",
           flexDirection: "column",
-          gap: 12,
+          gap: 8,
         }}
       >
-        {/*  */}
         <div
           style={{
-            height: "calc(100% - 135px)",
-            background: "transparent",
-            borderRadius: 16,
-            padding: 10,
+            height: "calc(100% - 128px)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          <div
+          <img
+            src="/assets/exhibit-map.png"
+            alt="전시장 안내 지도"
             style={{
+              display: "block",
               width: "100%",
               height: "100%",
-              background: "transparent",
-              borderRadius: 12,
-              padding: 8,
+              objectFit: "contain",
+              borderRadius: 8,
             }}
-          >
-            <img
-              src="/assets/exhibit-map.png"
-              alt="전시장 안내 지도"
-              style={{
-                display: "block",
-                width: "100%",
-                height: "100%",
-                objectFit: "contain",
-                borderRadius: 8,
-              }}
-            />
-          </div>
+          />
         </div>
 
-        {/*  */}
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(8, 1fr)",
-            gap: 10,
+            display: "flex",
+            justifyContent: "center",
             height: "120px",
           }}
         >
-          {exhibitionZones.slice(0, 3).map((zone) => (
-            <button
-              key={zone.id}
-              style={{
-                gridColumn: "span 2",
-                background: zone.color,
-                border: "none",
-                borderRadius: 10,
-                padding: "10px 8px",
-                fontSize: 16,
-                fontWeight: 800,
-                color: ["#FFD700", "#90EE90", "#87CEEB", "#FFB6C1"].includes(
-                  zone.color
-                )
-                  ? "#000"
-                  : "#fff",
-                cursor: "pointer",
-              }}
-              onClick={() => {}}
-            >
-              {zone.name}
-            </button>
-          ))}
-
           <button
             onClick={() => setIsModalOpen(true)}
             style={{
-              gridColumn: "span 2",
               background: "#111",
               color: "#fff",
               border: "3px solid #fff",
               borderRadius: 15,
-              padding: "25px 20px",
-              fontSize: 24,
+              padding: "35px 100px",
+              fontSize: 26,
               fontWeight: 900,
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
               gap: 15,
               cursor: "pointer",
+              minWidth: "450px",
+              height: "100%",
               position: "relative",
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: 15, flex: 1, justifyContent: "center" }}>
               <span style={{ color: "#ff4d4f", fontSize: 32 }}>♀</span>
               <span style={{ color: "#2f6bff", fontSize: 32 }}>♂</span>
-              화장실
+              장애인 화장실
             </div>
             
             <img
               src={point}
               alt="클릭 안내"
               style={{
-                width: "45px",
-                height: "45px",
+                width: "50px",
+                height: "50px",
                 objectFit: "contain",
-                marginRight: "5px",
+                marginRight: "10px",
               }}
             />
-          </button>
-
-          {exhibitionZones.slice(3).map((zone) => (
-            <button
-              key={zone.id}
-              style={{
-                gridColumn: "span 2",
-                background: zone.color,
-                border: "none",
-                borderRadius: 10,
-                padding: "10px 8px",
-                fontSize: 16,
-                fontWeight: 800,
-                color: ["#FFD700", "#90EE90", "#87CEEB", "#FFB6C1"].includes(
-                  zone.color
-                )
-                  ? "#000"
-                  : "#fff",
-                cursor: "pointer",
-              }}
-              onClick={() => {}}
-            >
-              {zone.name}
-            </button>
-          ))}
-
-          <button
-            style={{
-              gridColumn: "span 2",
-              background: "#111",
-              color: "#fff",
-              border: "2px solid #fff",
-              borderRadius: 10,
-              padding: "10px 8px",
-              fontSize: 16,
-              fontWeight: 900,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 8,
-            }}
-            onClick={() => nav("/high-contrast/works")}
-          >
-            🏆 작품존
           </button>
         </div>
       </div>
@@ -333,11 +228,3 @@ export default function HighContrastInfo() {
     </div>
   );
 }
-
-
-
-
-
-
-
-

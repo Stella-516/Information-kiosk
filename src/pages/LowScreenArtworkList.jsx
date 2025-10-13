@@ -53,7 +53,7 @@ export default function LowScreenArtworkList({ items }) {
 
   return (
     <div className="artwork-page" style={{ paddingBottom: 72 }}>
-      <div className="artwork-wrap panel" style={{ marginTop: "800px" }}>
+      <div className="artwork-wrap panel">
         <aside className="sidebar">
           <h2>🔎 기관으로 찾기</h2>
           <div className="flex flex-col gap-2">
