@@ -506,20 +506,6 @@ export const artworks = [
         image: "/assets/artworks/E6.jpg"
     },
     {
-        id: "E7",
-        org: "서울시립북부장애인종합복지관",
-        title: { ko: "함께 오름" },
-        artist: "김선기",
-        artistAvatar: "/assets/avatars/E(7).png",
-        qrCode: "/assets/qr/함께 오름 - 김선기.png",
-        purchasable: true,
-        purchaseNote: "구매하실 분은 안내데스크로 문의해 주세요.",
-        description: {
-            ko: "돌 계단 위로 피어난 꽃길을 따라 함께 오름은 마음을 하나로 이어주며 꽃들은 추억을 닮아 피어나 언제나 별빛처럼 따뜻하고 아름다움 표현함",
-        },
-        image: "/assets/artworks/E7.jpg"
-    },
-    {
         id: "E8",
         org: "서울시립북부장애인종합복지관",
         title: { ko: "피렌체 여행에서" },
