@@ -35,7 +35,7 @@ export const artworks = [
         org: "서울시립뇌성마비복지관",
         title: { ko: "슬플 비" },
         artist: "박병건",
-        artistAvatar: "/assets/avatars/C(3).jpg",
+        artistAvatar: "/assets/avatars/C(3).JPG",
         purchasable: true,
         purchaseNote: "안내데스크로 문의해 주세요.",
         description: {
@@ -538,7 +538,7 @@ export const artworks = [
         org: "서울시립북부장애인종합복지관",
         title: { ko: "용문의 가을" },
         artist: "정미현",
-        artistAvatar: "/assets/avatars/E(10).jpg",
+        artistAvatar: "/assets/avatars/E(10).JPG",
         qrCode: "/assets/qr/용문의 가을 - 정미현.png",
         purchasable: true,
         purchaseNote: "구매하실 분은 안내데스크로 문의해 주세요.",
