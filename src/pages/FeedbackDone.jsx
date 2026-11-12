@@ -1,44 +1,28 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import done from "../assets/done.png";
 import emoflower from "../assets/emoflower.png";
 import "../index.css";
+import {
+  commitCurrentFeedback,
+  readFeedbackDraft,
+} from "../utils/feedbackStorage";
 
 export default function FeedbackDone() {
   const nav = useNavigate();
-  const msg =
-    localStorage.getItem("feedback.message") || "방문해주셔서 감사합니다!";
-  const emoKey = localStorage.getItem("feedback.emotion.key");
-  const emoSrc = localStorage.getItem("feedback.emotion.src");
-  const date = localStorage.getItem("feedback.date");
+  const [view] = useState(() => {
+    const committed = commitCurrentFeedback();
+    if (committed) return committed;
+    return readFeedbackDraft();
+  });
 
   useEffect(() => {
-    document.body.classList.add('feedback-page');
-    
-    // 매번 새로운 피드백 저장
-    const feedbackId = Date.now().toString();
-    localStorage.setItem(`feedback_${feedbackId}_message`, msg);
-    localStorage.setItem(`feedback_${feedbackId}_emotion`, emoKey || '');
-    localStorage.setItem(`feedback_${feedbackId}_date`, date || new Date().toLocaleDateString('ko-KR', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      weekday: 'long'
-    }));
-    
-    // 임시 피드백 데이터 제거
-    localStorage.removeItem('feedback.message');
-    localStorage.removeItem('feedback.emotion.key');
-    localStorage.removeItem('feedback.emotion.label');
-    localStorage.removeItem('feedback.emotion.src');
-    localStorage.removeItem('feedback.date');
-    
+    document.body.classList.add("feedback-page");
     const t = setTimeout(() => nav("/"), 20000);
     return () => {
-      document.body.classList.remove('feedback-page');
+      document.body.classList.remove("feedback-page");
       clearTimeout(t);
     };
-  }, [nav, msg, emoKey, date]);
+  }, [nav]);
 
   return (
     <>
@@ -48,9 +32,9 @@ export default function FeedbackDone() {
         <div className="fbd-top">
           <img className="fbd-emoflower" src={emoflower} alt="" aria-hidden="true" />
           <div className="fbd-card">
-            {emoSrc && <img className="fbd-emoji" src={emoSrc} alt="" />}
-            <div className="fbd-msg">{msg}</div>
-            {date && <div className="fbd-date">{date}</div>}
+            {view.emoSrc && <img className="fbd-emoji" src={view.emoSrc} alt="" />}
+            <div className="fbd-msg">{view.message}</div>
+            {view.date && <div className="fbd-date">{view.date}</div>}
           </div>
         </div>
 

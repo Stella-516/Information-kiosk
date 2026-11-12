@@ -89,7 +89,19 @@ export default function Footer() {
           처음으로
         </button>
         <button
-          onClick={() => nav(-1)}
+          onClick={() => {
+            if (location.pathname.includes("/works/viewer")) {
+              if (location.pathname.startsWith("/low-screen")) {
+                nav("/low-screen/works");
+              } else if (location.pathname.startsWith("/high-contrast")) {
+                nav("/high-contrast/works");
+              } else {
+                nav("/works");
+              }
+              return;
+            }
+            nav(-1);
+          }}
           style={{
             background: isHighContrastMode ? "#fff" : "#333",
             color: isHighContrastMode ? "#000" : "#fff",

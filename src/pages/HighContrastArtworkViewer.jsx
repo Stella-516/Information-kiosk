@@ -2,7 +2,7 @@ import React, { useMemo, useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { artworks as artworksData } from "../data/artworksData";
 
-const DEFAULT_AVATAR = "/assets/avatars/default.png";
+const DEFAULT_AVATAR = "/assets/avatars/A(1).png";
 const PLACEHOLDER_IMG = "/assets/artworks/placeholder.png";
 
 export default function HighContrastArtworkViewer({ items }) {
@@ -237,16 +237,20 @@ export default function HighContrastArtworkViewer({ items }) {
           </button>
         </div>
         <div
+          className="artwork-detail-layout"
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr 0.6fr",
+            gridTemplateColumns: "1fr 1fr 0.85fr",
             gap: "20px",
             alignItems: "stretch",
-            maxHeight: "450px",
+            height: "min(550px, calc(100vh - 180px))",
+            gridTemplateRows: "minmax(0, 1fr)",
+            minHeight: 0,
           }}
         >
           {/* 좌측: 작품 이미지 + 작가의 다른 작품들 */}
           <div
+            className="artwork-detail-card"
             style={{
               background: "#000",
               border: "2px solid #fff",
@@ -368,6 +372,7 @@ export default function HighContrastArtworkViewer({ items }) {
 
           {/* 중앙: 작품 소개, 구매 정보, 작품 설명 */}
           <div
+            className="artwork-detail-card"
             style={{
               background: "#000",
               border: "2px solid #fff",
@@ -554,6 +559,7 @@ export default function HighContrastArtworkViewer({ items }) {
 
           {/* 우측: 작가 소개 */}
           <div
+            className="artwork-detail-card"
             style={{
               background: "#000",
               border: "2px solid #fff",
@@ -596,7 +602,7 @@ export default function HighContrastArtworkViewer({ items }) {
                 alignItems: "center",
                 justifyContent: "flex-start",
                 flex: 1,
-                paddingTop: "45px",
+                paddingTop: "20px",
               }}
             >
               {/* 작가 사진 */}
@@ -632,6 +638,9 @@ export default function HighContrastArtworkViewer({ items }) {
                   fontWeight: "bold",
                   color: "#fff",
                   marginBottom: "12px",
+                  lineHeight: 1.3,
+                  overflowWrap: "anywhere",
+                  width: "100%",
                 }}
               >
                 {artist}{" "}
@@ -710,10 +719,6 @@ export default function HighContrastArtworkViewer({ items }) {
     </div>
   );
 }
-
-
-
-
 
 
 

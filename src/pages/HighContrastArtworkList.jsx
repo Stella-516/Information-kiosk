@@ -2,7 +2,7 @@ import React, { useMemo, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { artworks as artworksData } from "../data/artworksData";
 
-const DEFAULT_AVATAR = "/assets/avatars/default.png";
+const DEFAULT_AVATAR = "/assets/avatars/A(1).png";
 
 export default function HighContrastArtworkList({ items }) {
   const nav = useNavigate();
@@ -15,11 +15,11 @@ export default function HighContrastArtworkList({ items }) {
   const [selectedOrg, setSelectedOrg] = useState(null);
 
   const fixedOrgs = [
-    "노원발달장애인평생교육센터",
-    "다운복지관",
+    "서울시립북부장애인종합복지관",
+    "성민복지관",
     "서울시립뇌성마비복지관",
     "서울장애인부모연대 노원지회",
-    "서울시립북부장애인종합복지관",
+    "다운복지관",
     "서울시립상이군경복지관",
   ];
 
@@ -73,9 +73,9 @@ export default function HighContrastArtworkList({ items }) {
                 className={`pill ${selectedOrg === o ? "active" : ""}`}
                 onClick={() => setSelectedOrg(o)}
                 style={{
-                  background: selectedOrg === o ? "#333" : "#000",
-                  color: "#fff",
-                  border: "2px solid #fff",
+                  background: selectedOrg === o ? "#ffff00" : "#000",
+                  color: selectedOrg === o ? "#000" : "#fff",
+                  border: selectedOrg === o ? "2px solid #ffff00" : "2px solid #fff",
                   borderRadius: "20px",
                   padding: "12px 16px",
                   fontSize: "16px",
@@ -97,7 +97,10 @@ export default function HighContrastArtworkList({ items }) {
                 }}
               >
                 {o}{" "}
-                <span className="count" style={{ color: "#ffff00" }}>
+                <span
+                  className="count"
+                  style={{ color: selectedOrg === o ? "#000" : "#ffff00" }}
+                >
                   {count}
                 </span>
               </button>
@@ -164,6 +167,8 @@ export default function HighContrastArtworkList({ items }) {
                   <img
                     src={a.image}
                     alt={a.title?.ko || "작품 이미지"}
+                    loading="lazy"
+                    decoding="async"
                     style={{
                       width: "100%",
                       height: "200px",
@@ -238,6 +243,8 @@ export default function HighContrastArtworkList({ items }) {
                     <img
                       src={a.artistAvatar || DEFAULT_AVATAR}
                       alt={`${a.artist || "작가"} 얼굴`}
+                      loading="lazy"
+                      decoding="async"
                       style={{
                         width: "32px",
                         height: "32px",

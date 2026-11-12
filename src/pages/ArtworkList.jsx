@@ -2,7 +2,7 @@ import React, { useMemo, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { artworks as artworksData } from "../data/artworksData";
 
-const DEFAULT_AVATAR = "/assets/avatars/default.png";
+const DEFAULT_AVATAR = "/assets/avatars/A(1).png";
 
 export default function ArtworkList({ items }) {
   const nav = useNavigate();
@@ -15,11 +15,11 @@ export default function ArtworkList({ items }) {
   const [selectedOrg, setSelectedOrg] = useState(null);
 
   const fixedOrgs = [
-    "노원발달장애인평생교육센터",
-    "다운복지관",
+    "서울시립북부장애인종합복지관",
+    "성민복지관",
     "서울시립뇌성마비복지관",
     "서울장애인부모연대 노원지회",
-    "서울시립북부장애인종합복지관",
+    "다운복지관",
     "서울시립상이군경복지관",
   ];
 
@@ -80,7 +80,12 @@ export default function ArtworkList({ items }) {
             {filtered.map((a) => (
               <div key={a.id} className="card">
                 <div className="thumb">
-                  <img src={a.image} alt={a.title?.ko || "작품 이미지"} />
+                  <img
+                    src={a.image}
+                    alt={a.title?.ko || "작품 이미지"}
+                    loading="lazy"
+                    decoding="async"
+                  />
                   {a.purchasable === true && (
                     <span className="buy-badge ok">구매 가능</span>
                   )}
@@ -95,6 +100,8 @@ export default function ArtworkList({ items }) {
                     <img
                       src={a.artistAvatar || DEFAULT_AVATAR}
                       alt={`${a.artist || "작가"} 얼굴`}
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => {
                         e.currentTarget.src = DEFAULT_AVATAR;
                       }}

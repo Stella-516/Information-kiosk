@@ -34,10 +34,13 @@ body {
 .logo {
   height: 48px;
   width: auto;
+  margin-left: 24px;
 }
 .time {
+  margin-right: 40px;
   font-size: 24px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 /* (예방) fixed 기준을 흔드는 속성 방지 */
@@ -336,6 +339,12 @@ body.feedback-page .museum-bg__overlay {
   box-sizing: border-box;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
+}
+
+.menu-content,
+.menu-cards {
+  overflow: hidden;
 }
 .menu-screen.solid-bg {
   background-color: #efeff3; /* 전체 배경색과 통일 */
@@ -582,19 +591,25 @@ body.feedback-page .museum-bg__overlay {
   opacity: 0.9;
 }
 .fbh-cards {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 220px; /* 카드 크기 원래대로 */
-  gap: 40px; /* 카드 간격 줄임 */
+  display: flex;
+  gap: 30px;
   overflow-x: auto;
-  padding: 12px 20px 24px; /* 좌우 패딩 줄임 */
+  overflow-y: hidden;
+  padding: 12px 20px 24px;
   margin: 0 auto 28px;
-  /* 터치 스와이프는 유지하면서 스크롤바는 숨김 */
+  height: 280px;
+  width: 100%;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
-  scrollbar-width: none; /* Firefox */
+  cursor: grab;
+  touch-action: pan-x;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-.fbh-cards::-webkit-scrollbar { /* Chrome/Safari */
+.fbh-cards:active {
+  cursor: grabbing;
+}
+.fbh-cards::-webkit-scrollbar {
   display: none;
 }
 .fbh-card {
@@ -603,9 +618,17 @@ body.feedback-page .museum-bg__overlay {
   border-radius: 16px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  min-width: 280px;
+  width: 280px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
 }
 .fbh-card__thumb {
-  height: 120px;
+  height: 180px;
   background: transparent;
   display: flex;
   align-items: center;
@@ -614,6 +637,8 @@ body.feedback-page .museum-bg__overlay {
 }
 .fbh-card__body {
   padding: 14px;
+  text-align: center;
+  width: 100%;
 }
 .fbh-card__title {
   margin: 0 0 6px;
@@ -1544,7 +1569,6 @@ body.feedback-page .museum-bg__overlay {
 .artwork-wrap {
   max-width: 1200px;
   margin: 0 auto;
-  margin-top: 800px; /* 기관으로 찾기와 작품 나열을 많이 아래로 이동 */
   padding: 24px 16px;
   display: grid;
   grid-template-columns: 1fr;
@@ -1601,8 +1625,8 @@ body.feedback-page .museum-bg__overlay {
   padding: 8px 4px;
   overflow-x: auto;
   overflow-y: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: #888 #e0e0e0;
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
@@ -1786,10 +1810,11 @@ body.feedback-page .museum-bg__overlay {
   flex-wrap: nowrap;
   gap: 16px;
   padding: 8px 4px;
-  scrollbar-width: thin;
-  scrollbar-color: #888 #e0e0e0;
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
   scroll-snap-type: x mandatory;
   width: 100%;
 }
@@ -1863,6 +1888,12 @@ body.feedback-page .museum-bg__overlay {
   background: inherit;
   min-height: 100vh;
   color: #111;
+  overflow: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.artwork-page::-webkit-scrollbar {
+  display: none;
 }
 
 /* 수평 레일도 같은 배경을 사용해서 스크롤 끝에서도 색이 끊기지 않게 */
@@ -1870,25 +1901,14 @@ body.feedback-page .museum-bg__overlay {
   background: inherit;
 }
 
-/* 웹킷 브라우저용 스크롤바 스타일 */
+/* 작품 가로 레일의 스크롤바는 드래그 및 휠로만 이동 */
+.art-rail {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 .art-rail::-webkit-scrollbar {
-  height: 12px;
-}
-
-.art-rail::-webkit-scrollbar-track {
-  background: #e0e0e0;
-  border-radius: 6px;
-  margin: 0 8px;
-}
-
-.art-rail::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 6px;
-  border: 2px solid #e0e0e0;
-}
-
-.art-rail::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  display: none;
 }
 /* 패널(사이드바 + 카드 레일) 공통 박스 */
 .panel {
@@ -1967,10 +1987,11 @@ body.feedback-page .museum-bg__overlay {
   padding: 8px 4px;
   overflow-x: auto;
   overflow-y: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: #888 #e0e0e0;
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
   scroll-snap-type: x mandatory;
   background: inherit;
   width: 100%;
@@ -3730,6 +3751,39 @@ body,
   width: 100%;
   min-height: 100%;
   overflow-x: hidden; /* 가로 스크롤 제거 */
+}
+
+body.kiosk-no-scroll {
+  overflow: hidden !important;
+}
+
+body.kiosk-no-scroll #root {
+  height: 100vh;
+  overflow: hidden !important;
+}
+
+.artwork-detail-layout {
+  box-sizing: border-box;
+}
+
+.artwork-detail-card {
+  box-sizing: border-box;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.menu-screen,
+.artwork-page,
+.artwork-page * {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.menu-screen::-webkit-scrollbar,
+.artwork-page::-webkit-scrollbar,
+.artwork-page *::-webkit-scrollbar {
+  display: none;
 }
 /* ===== Artist Intro v2: 작가 사진 + 작가명 + 작품명 ===== */
 .a-intro-wrap {

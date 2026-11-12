@@ -2,7 +2,7 @@ import React, { useMemo, useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { artworks as artworksData } from "../data/artworksData";
 
-const DEFAULT_AVATAR = "/assets/avatars/default.png";
+const DEFAULT_AVATAR = "/assets/avatars/A(1).png";
 const PLACEHOLDER_IMG = "/assets/artworks/placeholder.png";
 
 export default function ArtworkViewer({ items }) {
@@ -36,7 +36,7 @@ export default function ArtworkViewer({ items }) {
 
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
@@ -138,16 +138,18 @@ export default function ArtworkViewer({ items }) {
         }}
       >
         {/* 네비게이션 인디케이터 */}
-        <div style={{
-          position: "absolute",
-          top: "20px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          gap: "8px",
-          alignItems: "center",
-          zIndex: 10,
-        }}>
+        <div
+          style={{
+            position: "absolute",
+            top: "20px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            display: "flex",
+            gap: "8px",
+            alignItems: "center",
+            zIndex: 10,
+          }}
+        >
           <button
             onClick={() => {
               if (idx > 0) {
@@ -174,14 +176,16 @@ export default function ArtworkViewer({ items }) {
           >
             ‹
           </button>
-          <span style={{
-            background: "#111",
-            color: "#fff",
-            padding: "6px 16px",
-            borderRadius: "20px",
-            fontSize: "14px",
-            fontWeight: "bold",
-          }}>
+          <span
+            style={{
+              background: "#111",
+              color: "#fff",
+              padding: "6px 16px",
+              borderRadius: "20px",
+              fontSize: "14px",
+              fontWeight: "bold",
+            }}
+          >
             {idx + 1} / {data.length}
           </span>
           <button
@@ -212,15 +216,19 @@ export default function ArtworkViewer({ items }) {
           </button>
         </div>
         <div
+          className="artwork-detail-layout"
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr 0.6fr",
+            gridTemplateColumns: "1fr 1fr 0.85fr",
             gap: "20px",
             alignItems: "stretch",
-            maxHeight: "450px",
+            height: "min(550px, calc(100vh - 180px))",
+            gridTemplateRows: "minmax(0, 1fr)",
+            minHeight: 0,
           }}
         >
           <div
+            className="artwork-detail-card"
             style={{
               background: "#fff",
               borderRadius: "12px",
@@ -232,6 +240,7 @@ export default function ArtworkViewer({ items }) {
             }}
           >
             <div
+              className="artwork-detail-card"
               style={{
                 width: "100%",
                 aspectRatio: "1",
@@ -255,6 +264,7 @@ export default function ArtworkViewer({ items }) {
             {art.qrCode && (
               <div style={{ marginBottom: "12px", textAlign: "center" }}>
                 <div
+                  className="artwork-detail-card"
                   style={{
                     fontSize: "12px",
                     fontWeight: "bold",
@@ -548,7 +558,7 @@ export default function ArtworkViewer({ items }) {
                 alignItems: "center",
                 justifyContent: "flex-start",
                 flex: 1,
-                paddingTop: "45px",
+                paddingTop: "20px",
               }}
             >
               <div
@@ -560,7 +570,7 @@ export default function ArtworkViewer({ items }) {
               >
                 <img
                   src={safeSrc(
-                    art.artistPortrait || art.artistAvatar || DEFAULT_AVATAR
+                    art.artistPortrait || art.artistAvatar || DEFAULT_AVATAR,
                   )}
                   alt={`${artist} 얼굴`}
                   style={{
@@ -582,6 +592,9 @@ export default function ArtworkViewer({ items }) {
                   fontWeight: "bold",
                   color: "#333",
                   marginBottom: "12px",
+                  lineHeight: 1.3,
+                  overflowWrap: "anywhere",
+                  width: "100%",
                 }}
               >
                 {artist}{" "}

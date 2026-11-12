@@ -1,4 +1,5 @@
 // src/App.jsx
+import { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -43,6 +44,21 @@ import ArtistIntroList from "./pages/ArtistIntroList";
 
 function AppShell() {
   const { pathname } = useLocation();
+
+  useEffect(() => {
+    const isMenuPage = /^\/[^/]+$/.test(pathname) && pathname !== "/" && pathname !== "/guide";
+    const isArtworkPage = pathname.endsWith("/works") || pathname.includes("/works/viewer");
+    const shouldDisableScroll =
+      isMenuPage ||
+      pathname === "/menu" ||
+      pathname === "/low-screen" ||
+      pathname === "/high-contrast" ||
+      isArtworkPage;
+
+    document.body.classList.toggle("kiosk-no-scroll", shouldDisableScroll);
+    return () => document.body.classList.remove("kiosk-no-scroll");
+  }, [pathname]);
+
   // 랜딩(/)과 guide 계열에서는 하단바 숨김, 그 외 페이지에서는 표시
   const showFooter = !(pathname === "/" || pathname.startsWith("/guide"));
 

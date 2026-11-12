@@ -60,7 +60,7 @@ function Header() {
         <span
           style={{
             marginRight: "8px",
-            fontSize: "18px",
+            fontSize: "22px",
             color: "#333",
           }}
         >
@@ -68,7 +68,7 @@ function Header() {
         </span>
         <span
           style={{
-            fontSize: "20px",
+            fontSize: "24px",
             color: "#333",
           }}
         >
