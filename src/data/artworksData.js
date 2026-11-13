@@ -779,7 +779,7 @@ export const artworks = [
         title: { ko: "봄꽃나무" },
         artist: "이주석",
         artistAvatar: "/assets/avatars/B(6).png",
-        qrCode: "/assets/qr/artvoice-봄꽃나무-이주석.png",
+        qrCode: "/assets/qr/artvoice-봄꽂나무-이주석.png",
         purchasable: false,
         purchaseNote: "해당 작품은 판매하지 않습니다.",
         description: {
